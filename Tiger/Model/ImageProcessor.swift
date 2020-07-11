@@ -37,6 +37,7 @@ extension ImageProcessor {
     struct Result: Identifiable, Hashable {
         var value: String
         let confidence: Double
+        let location: CGRect
         let id = UUID()
         
         func hash(into hasher: inout Hasher) {
@@ -108,7 +109,7 @@ private extension ImageProcessor {
         }
         
         for res in recognizedText {
-            resultHandler(Result(value: res.0, confidence: Double(res.1)))
+            resultHandler(Result(value: res.0, confidence: Double(res.1), location: res.2))
         }
     }
     
