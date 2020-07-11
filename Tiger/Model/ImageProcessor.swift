@@ -17,6 +17,8 @@ class ImageProcessor {
     
     private var resultHandler: (Result) -> Void = {_ in}
     
+    private var viewArea: CGRect?
+    
     init(target: RecognitionTarget = .weblink) {
         self.target = target
     }
@@ -47,12 +49,13 @@ extension ImageProcessor {
         }
     }
     
-    func process(image data: CMSampleBuffer, resultHandler: @escaping (Result) -> Void) throws {
+    func process(image data: CMSampleBuffer, in viewArea: CGRect?, resultHandler: @escaping (Result) -> Void) throws {
         let cgImage = try cast(buffer: data)
         let requestHandler = VNImageRequestHandler(cgImage: cgImage)
         let request = VNRecognizeTextRequest(completionHandler: handleTextRecognition)
         
         self.resultHandler = resultHandler
+        self.viewArea = viewArea
         request.recognitionLevel = .accurate
         request.usesLanguageCorrection = false
         
@@ -93,9 +96,30 @@ private extension ImageProcessor {
                     return nil
                 }
                 
-                return (text, observation.confidence, CGRect(x: rect.topLeft.x, y: rect.topLeft.y,
-                                                             width: abs(rect.topRight.x - rect.topLeft.x),
-                                                             height: abs(rect.bottomLeft.y - rect.topLeft.y)))
+                var textRect: CGRect?
+                
+                if let viewArea = self.viewArea {
+                    let transform = CGAffineTransform.identity
+                        .scaledBy(x: 1, y: -1)
+                        .translatedBy(x: 0, y: -viewArea.size.height)
+                        .scaledBy(x: viewArea.size.width, y: viewArea.size.height)
+
+                    let convertedTopLeft = rect.topLeft.applying(transform)
+                    let convertedTopRight = rect.topRight.applying(transform)
+                    let convertedBottomLeft = rect.bottomLeft.applying(transform)
+                    let convertedBottomRight = rect.bottomRight.applying(transform)
+                    
+                    textRect = CGRect(x: convertedTopLeft.x,
+                                      y: convertedTopLeft.y,
+                                      width: convertedTopRight.x - convertedTopLeft.x,
+                                      height: convertedBottomLeft.y - convertedTopLeft.y)
+                    
+//                    print(textRect)
+                }
+                
+                return (text, observation.confidence, textRect ?? CGRect(x: rect.topLeft.x, y: rect.topLeft.y,
+                                                                         width: abs(rect.topRight.x - rect.topLeft.x),
+                                                                         height: abs(rect.bottomLeft.y - rect.topLeft.y)))
             }
             .map {
                 (fixWeblink($0.0), $0.1, $0.2)

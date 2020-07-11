@@ -115,6 +115,6 @@ extension SaveScreen {
 
 struct SaveScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SaveScreen(scannerResult: .constant(.init(value: "https://example.com/path/which/is/very/very/very/long/for/demonstration/purpose", confidence: 1)), isPresented: .constant(true))
+        SaveScreen(scannerResult: .constant(.init(value: "https://example.com/path/which/is/very/very/very/long/for/demonstration/purpose", confidence: 1, location: .zero)), isPresented: .constant(true))
     }
 }

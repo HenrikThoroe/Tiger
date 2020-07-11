@@ -138,6 +138,7 @@ extension CameraView {
                 if captureSession!.canAddInput(input), captureSession!.canAddOutput(videoOutput!) {
                     captureSession?.addInput(input)
                     captureSession?.addOutput(videoOutput!)
+                    captureSession?.connections.forEach { $0.videoOrientation = .portrait }
                     setupPreview()
                 }
             } catch let error {

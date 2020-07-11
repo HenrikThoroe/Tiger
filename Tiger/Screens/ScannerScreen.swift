@@ -32,8 +32,12 @@ struct ScannerScreen: View {
         VStack {
             
             if showCamera {
-                camera()
-                    .edgesIgnoringSafeArea(.top)
+                GeometryReader { proxy in
+                    ZStack {
+                        self.camera(in: proxy)
+                           .edgesIgnoringSafeArea(.top)
+                   }
+                }
             } else {
                 preview()
                     .modifier(Stretch(direction: .both))
@@ -49,11 +53,11 @@ struct ScannerScreen: View {
         }
     }
     
-    func camera() -> some View {
+    func camera(in rect: GeometryProxy) -> some View {
         ZStack(alignment: .bottom) {
             CameraView(onReceiveFrame: { frame in
                 do {
-                    try self.imageProcessor.process(image: frame,
+                    try self.imageProcessor.process(image: frame, in: rect.frame(in: .local),
                                                     resultHandler: self.handleScannerResult(_:))
                 } catch {
                     print(error)

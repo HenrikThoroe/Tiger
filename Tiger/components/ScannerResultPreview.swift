@@ -54,10 +54,10 @@ struct ScannerResultPreview: View {
 struct ScannerResultPreview_Previews: PreviewProvider {
     static var previews: some View {
         VStack(spacing: 30) {
-            ScannerResultPreview(scan: ImageProcessor.Result(value: "https://example.com", confidence: 1)) {
+            ScannerResultPreview(scan: ImageProcessor.Result(value: "https://example.com", confidence: 1, location: .zero)) {
                 
             }
-            ScannerResultPreview(scan: ImageProcessor.Result(value: "https://example.com/long/long/long/long/long/path", confidence: 0.5)) {
+            ScannerResultPreview(scan: ImageProcessor.Result(value: "https://example.com/long/long/long/long/long/path", confidence: 0.5, location: .zero)) {
                 
             }
         }.padding()
