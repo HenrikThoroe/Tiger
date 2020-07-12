@@ -110,7 +110,7 @@ extension ScannedLink {
 private extension ScannedLink {
     
     func downloadIcon(onComplete: @escaping () -> Void) {
-        icon = UIImage(named: "Demo")!
+        icon = UIImage(named: "IconMissing")!
         
         let handleError = { (error: Error?) in
             print(error as Any)
