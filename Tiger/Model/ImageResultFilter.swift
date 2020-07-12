@@ -26,6 +26,10 @@ extension ImageResultFilter {
         mergeGroups()
     }
     
+    func clear() {
+        results = []
+    }
+    
 }
 
 // MARK: - Logic

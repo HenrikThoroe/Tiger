@@ -96,7 +96,12 @@ struct ScannerScreen: View {
                 }
                 
                 Spacer()
-            }.background(Color(.systemBackground).opacity(0.4))
+                
+                Button(action: self.imageFilter.clear) {
+                    Text("Clear")
+                        .padding()
+                }.buttonStyle(TextButtonStyle(highlight: true))
+            }
             
             ScrollView {
                 VStack(spacing: 20) {
