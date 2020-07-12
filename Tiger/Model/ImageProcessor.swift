@@ -128,10 +128,6 @@ private extension ImageProcessor {
                 isWeblink($0.0)
             }
         
-        if !recognizedText.isEmpty {
-            print(recognizedText)
-        }
-        
         for res in recognizedText {
             resultHandler(Result(value: res.0, confidence: Double(res.1), location: res.2))
         }

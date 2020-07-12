@@ -20,6 +20,8 @@ struct ScannerScreen: View {
     
     @State private var showCamera: Bool = true
     
+    @ObservedObject private var imageFilter = ImageResultFilter()
+    
     private let imageProcessor = ImageProcessor()
     
 //    init() {
@@ -57,7 +59,7 @@ struct ScannerScreen: View {
         ZStack(alignment: .bottom) {
             CameraView(onReceiveFrame: { frame in
                 do {
-                    try self.imageProcessor.process(image: frame, in: rect.frame(in: .local),
+                    try self.imageProcessor.process(image: frame, in: nil,
                                                     resultHandler: self.handleScannerResult(_:))
                 } catch {
                     print(error)
@@ -67,7 +69,7 @@ struct ScannerScreen: View {
             
             Button(action: { self.showCamera = false }) {
                 VStack(spacing: 15) {
-                    Text(results.isEmpty ? "Nothing Found yet" : "Found \(results.count) Links")
+                    Text(results.isEmpty ? "Nothing Found yet" : "Found \(imageFilter.results.count) Links")
                         .font(.headline)
                         .fontWeight(.heavy)
                     Text("Click to View your Results")
@@ -98,7 +100,7 @@ struct ScannerScreen: View {
             
             ScrollView {
                 VStack(spacing: 20) {
-                    ForEach(results, id: \.self) { result in
+                    ForEach(imageFilter.results, id: \.self) { result in
                         ScannerResultPreview(scan: result) {
                             self.prepareSave(of: result)
                         }
@@ -116,6 +118,7 @@ extension ScannerScreen {
     func handleScannerResult(_ result: ImageProcessor.Result) {
         if !results.contains(where: { $0.value == result.value }) {
             results += [result]
+            imageFilter.feed(with: result)
         }
     }
     
