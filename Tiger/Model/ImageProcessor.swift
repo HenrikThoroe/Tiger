@@ -107,14 +107,11 @@ private extension ImageProcessor {
                     let convertedTopLeft = rect.topLeft.applying(transform)
                     let convertedTopRight = rect.topRight.applying(transform)
                     let convertedBottomLeft = rect.bottomLeft.applying(transform)
-                    let convertedBottomRight = rect.bottomRight.applying(transform)
                     
                     textRect = CGRect(x: convertedTopLeft.x,
                                       y: convertedTopLeft.y,
                                       width: convertedTopRight.x - convertedTopLeft.x,
                                       height: convertedBottomLeft.y - convertedTopLeft.y)
-                    
-//                    print(textRect)
                 }
                 
                 return (text, observation.confidence, textRect ?? CGRect(x: rect.topLeft.x, y: rect.topLeft.y,
@@ -142,6 +139,10 @@ private extension ImageProcessor {
             href.replaceSubrange(href.startIndex...secondBackslash, with: "https://")
         } else {
             href = "https://\(href)"
+        }
+        
+        if let url = URL(string: href), let host = url.host {
+            href = href.replacingOccurrences(of: host, with: host.lowercased(), options: .caseInsensitive)
         }
         
         return href
