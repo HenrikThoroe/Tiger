@@ -39,10 +39,10 @@ extension ScannedLink {
     var icon: UIImage {
         get {
             guard let data = icon_ else {
-                return UIImage(systemName: "xmark.octagon")!
+                return UIImage(named: "IconMissing")!
             }
             
-            return UIImage(data: data) ?? UIImage(systemName: "xmark.octagon")!
+            return UIImage(data: data) ?? UIImage(systemName: "IconMissing")!
         }
         
         set {
@@ -110,8 +110,6 @@ extension ScannedLink {
 private extension ScannedLink {
     
     func downloadIcon(onComplete: @escaping () -> Void) {
-        icon = UIImage(named: "IconMissing")!
-        
         let handleError = { (error: Error?) in
             print(error as Any)
         }
