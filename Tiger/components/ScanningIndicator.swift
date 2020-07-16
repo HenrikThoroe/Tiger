@@ -35,36 +35,18 @@ struct ScanningIndicator: View {
                         self.offset = -proxy.size.width
                         
                         self.timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { _ in
-                            Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-                                guard self.timer?.isValid ?? false else {
-                                    return
-                                }
-                                
-                                self.offset = -proxy.size.width
-                                
-                                withAnimation(Animation.linear(duration: 1)) {
-                                    guard self.timer?.isValid ?? false else {
-                                        return
-                                    }
-                                    
-                                    self.offset += proxy.size.width
-                                }
-                                
-                                Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { timer in
-                                    withAnimation(Animation.linear(duration: 1)) {
-                                        guard self.timer?.isValid ?? false else {
-                                            return
-                                        }
-                                        
-                                        self.offset += proxy.size.width
-                                    }
-                                    
-                                    timer.invalidate()
-                                }
-                                
-                                timer.invalidate()
+                            guard self.timer?.isValid ?? false else {
+                                return
+                            }
+                            
+                            self.offset = -proxy.size.width
+                            
+                            withAnimation(Animation.linear(duration: 2)) {
+                                self.offset = proxy.size.width
                             }
                         }
+                        
+                        self.timer?.fire()
                     }
                     .onDisappear {
                         self.timer?.invalidate()
