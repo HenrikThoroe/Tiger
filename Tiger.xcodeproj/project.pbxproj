@@ -18,6 +18,7 @@
 		AF29A26E24A8A24000308D45 /* dismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29A26D24A8A24000308D45 /* dismissKeyboard.swift */; };
 		AF29A27324AB955B00308D45 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF29A27224AB955B00308D45 /* AppModel.swift */; };
 		AF2F196624BDB84E00345A98 /* ScanningIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F196524BDB84E00345A98 /* ScanningIndicator.swift */; };
+		AF2F196824C0E32E00345A98 /* FlatButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF2F196724C0E32E00345A98 /* FlatButtonStyle.swift */; };
 		AF4050E024AD0C4B006F2143 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4050DF24AD0C4B006F2143 /* ImageProcessor.swift */; };
 		AF4050E224AD159C006F2143 /* RegEx.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4050E124AD159C006F2143 /* RegEx.swift */; };
 		AF5FBC9A24A3A2550009D7DF /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FBC9924A3A2550009D7DF /* CameraView.swift */; };
@@ -75,6 +76,7 @@
 		AF29A26D24A8A24000308D45 /* dismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboard.swift; sourceTree = "<group>"; };
 		AF29A27224AB955B00308D45 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		AF2F196524BDB84E00345A98 /* ScanningIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanningIndicator.swift; sourceTree = "<group>"; };
+		AF2F196724C0E32E00345A98 /* FlatButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButtonStyle.swift; sourceTree = "<group>"; };
 		AF4050DF24AD0C4B006F2143 /* ImageProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		AF4050E124AD159C006F2143 /* RegEx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegEx.swift; sourceTree = "<group>"; };
 		AF5FBC9924A3A2550009D7DF /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				AF717A3524A76F9E007E641E /* MaterialButtonStyle.swift */,
 				AF15C80324A7D5E2004E3E60 /* TextButtonStyle.swift */,
 				AF15C80524A7D725004E3E60 /* IconButtonStyle.swift */,
+				AF2F196724C0E32E00345A98 /* FlatButtonStyle.swift */,
 			);
 			path = ButtonStyles;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				AFD515B024BA3E6C001A4EC5 /* ImageResultFilter.swift in Sources */,
 				AF6151EA24A200E700E158C7 /* SceneDelegate.swift in Sources */,
 				AF6151EF24A200E700E158C7 /* MainScreen.swift in Sources */,
+				AF2F196824C0E32E00345A98 /* FlatButtonStyle.swift in Sources */,
 				AF61522824A27ACB00E158C7 /* SwitchComponent.swift in Sources */,
 				AF6151ED24A200E700E158C7 /* Tiger.xcdatamodeld in Sources */,
 				AF717A3A24A79073007E641E /* LinkPreview.swift in Sources */,
