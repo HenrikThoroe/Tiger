@@ -50,15 +50,19 @@ struct LinkDetailScreen: View {
             Spacer()
             
             Button(action: self.requestShare) {
-                Image(systemName: "square.and.arrow.up")
-                    .resizable()
-            }.buttonStyle(IconButtonStyle(size: .l))
+                HStack(spacing: 10) {
+                    Text("Share")
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }.buttonStyle(FlatButtonStyle())
             
             Button(action: self.requestDelete) {
-                Image(systemName: "trash")
-                    .resizable()
+                HStack(spacing: 10) {
+                    Text("Delete")
+                    Image(systemName: "trash")
+                }
             }
-            .buttonStyle(IconButtonStyle(behaviour: .destructive, size: .l))
+            .buttonStyle(FlatButtonStyle(type: .destructive))
             .alert(isPresented: self.$showDeleteWarning, content: self.deleteAlert)
         }
     }
