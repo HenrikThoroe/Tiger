@@ -20,6 +20,8 @@ struct LinkDetailScreen: View {
     
     @State private var shouldDelete: Bool = false
     
+    @State private var showShareSheet: Bool = false
+    
     init(for link: ScannedLink) {
         self.link = link
     }
@@ -43,6 +45,9 @@ struct LinkDetailScreen: View {
             .padding()
         }
         .onDisappear(perform: handleDisappear)
+        .sheet(isPresented: $showShareSheet) {
+            ShareSheet(activityItems: [self.link.url as Any])
+        }
     }
     
     func toolbar() -> some View {
@@ -108,7 +113,7 @@ struct LinkDetailScreen: View {
 extension LinkDetailScreen {
     
     func requestShare() {
-        
+        showShareSheet = true
     }
     
     func requestDelete() {

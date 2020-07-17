@@ -27,6 +27,8 @@ struct LibraryScreen: View {
     
     @State private var showDeleteWarning: Bool = false
     
+    @State private var sharedUrl: URL? = nil
+    
     var body: some View {
         VStack {
             NavigationView {
@@ -45,7 +47,7 @@ struct LibraryScreen: View {
                                     Image(systemName: "link")
                                 }
                                 
-                                Button(action: {}) {
+                                Button(action: { self.sharedUrl = link.url }) {
                                     Text("Share")
                                     Image(systemName: "square.and.arrow.up")
                                 }
@@ -73,6 +75,9 @@ struct LibraryScreen: View {
                         }.buttonStyle(IconButtonStyle())
                     }   
                 )
+                .sheet(item: $sharedUrl) { url in
+                    ShareSheet(activityItems: [url as Any])
+                }
             }
         }
     }
