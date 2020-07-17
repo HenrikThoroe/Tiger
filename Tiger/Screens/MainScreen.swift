@@ -31,7 +31,7 @@ struct MainScreen: View {
                 .modifier(Stretch(direction: .both))
                 .tabItem {
                     VStack {
-                        Image(systemName: "command")
+                        Image(systemName: "doc.text.viewfinder")
                         Text("Scanner")
                     }
                 }
@@ -40,7 +40,7 @@ struct MainScreen: View {
                 .modifier(Stretch(direction: .both))
                 .tabItem {
                     VStack {
-                        Image(systemName: "option")
+                        Image(systemName: "tray.2")
                         Text("Library")
                     }
                 }
