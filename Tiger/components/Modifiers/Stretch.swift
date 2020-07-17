@@ -10,7 +10,7 @@ import SwiftUI
 
 struct Stretch: ViewModifier {
     
-    let direction: Direction
+    var direction: Direction = .both
     
     var alignment: Alignment = .center
     
