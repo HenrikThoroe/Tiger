@@ -12,6 +12,8 @@ struct Stretch: ViewModifier {
     
     let direction: Direction
     
+    var alignment: Alignment = .center
+    
     private var minWidth: CGFloat? {
         direction == .vertical ? nil : 0
     }
@@ -33,7 +35,8 @@ struct Stretch: ViewModifier {
             .frame(minWidth: minWidth,
                    maxWidth: maxWidth,
                    minHeight: minHeight,
-                   maxHeight: maxHeight)
+                   maxHeight: maxHeight,
+                   alignment: alignment)
     }
     
 }

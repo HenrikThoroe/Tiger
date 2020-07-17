@@ -43,6 +43,7 @@
 		AF717A3824A7760D007E641E /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF717A3724A7760D007E641E /* SearchBar.swift */; };
 		AF717A3A24A79073007E641E /* LinkPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF717A3924A79073007E641E /* LinkPreview.swift */; };
 		AF717A3E24A799C2007E641E /* ScannerResultPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF717A3D24A799C2007E641E /* ScannerResultPreview.swift */; };
+		AFBA6C4A24C1C12300E1E860 /* ListButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBA6C4924C1C12300E1E860 /* ListButtonStyle.swift */; };
 		AFD515B024BA3E6C001A4EC5 /* ImageResultFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD515AF24BA3E6C001A4EC5 /* ImageResultFilter.swift */; };
 		AFD515B224BB4EC9001A4EC5 /* StringSimilarity.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD515B124BB4EC9001A4EC5 /* StringSimilarity.swift */; };
 		AFD515B424BB5935001A4EC5 /* Average.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD515B324BB5935001A4EC5 /* Average.swift */; };
@@ -107,6 +108,7 @@
 		AF717A3724A7760D007E641E /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AF717A3924A79073007E641E /* LinkPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkPreview.swift; sourceTree = "<group>"; };
 		AF717A3D24A799C2007E641E /* ScannerResultPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerResultPreview.swift; sourceTree = "<group>"; };
+		AFBA6C4924C1C12300E1E860 /* ListButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListButtonStyle.swift; sourceTree = "<group>"; };
 		AFD515AF24BA3E6C001A4EC5 /* ImageResultFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResultFilter.swift; sourceTree = "<group>"; };
 		AFD515B124BB4EC9001A4EC5 /* StringSimilarity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSimilarity.swift; sourceTree = "<group>"; };
 		AFD515B324BB5935001A4EC5 /* Average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 				AF15C80324A7D5E2004E3E60 /* TextButtonStyle.swift */,
 				AF15C80524A7D725004E3E60 /* IconButtonStyle.swift */,
 				AF2F196724C0E32E00345A98 /* FlatButtonStyle.swift */,
+				AFBA6C4924C1C12300E1E860 /* ListButtonStyle.swift */,
 			);
 			path = ButtonStyles;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				AF5FBC9E24A4E1170009D7DF /* LibraryScreen.swift in Sources */,
 				AF15C80624A7D725004E3E60 /* IconButtonStyle.swift in Sources */,
 				AFD515B024BA3E6C001A4EC5 /* ImageResultFilter.swift in Sources */,
+				AFBA6C4A24C1C12300E1E860 /* ListButtonStyle.swift in Sources */,
 				AF6151EA24A200E700E158C7 /* SceneDelegate.swift in Sources */,
 				AF6151EF24A200E700E158C7 /* MainScreen.swift in Sources */,
 				AF2F196824C0E32E00345A98 /* FlatButtonStyle.swift in Sources */,

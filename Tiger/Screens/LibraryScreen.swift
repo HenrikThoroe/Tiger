@@ -38,8 +38,7 @@ struct LibraryScreen: View {
                             NavigationLink(destination: LinkDetailScreen(for: link)) {
                                 LinkPreview(link: link)
                             }
-                            .buttonStyle(MaterialButtonStyle(flat: false))
-                            .padding()
+                            .buttonStyle(ListButtonStyle())
                             .contextMenu {
                                 Button(action: link.open) {
                                     Text("Open in Browser")

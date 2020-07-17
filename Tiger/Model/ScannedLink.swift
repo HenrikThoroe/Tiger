@@ -13,14 +13,15 @@ import CoreData
 extension ScannedLink {
     
     static var example: ScannedLink {
-        let example = ScannedLink()
-        
-        example.href = "https://example.com/long/scanned/path"
-        example.icon = UIImage(named: "Demo")!
-        example.id = UUID()
-        example.scanned = Date()
-        
-        return example
+        return ScannedLink(context: .init(concurrencyType: .mainQueueConcurrencyType), href: "https://www.apple.com/iphone")
+    }
+    
+    static var shortExample: ScannedLink {
+        return ScannedLink(context: .init(concurrencyType: .mainQueueConcurrencyType), href: "https://www.apple.com")
+    }
+    
+    static var longExample: ScannedLink {
+        return ScannedLink(context: .init(concurrencyType: .mainQueueConcurrencyType), href: "https://www.apple.com/long/path/to/website/bla/bla.html")
     }
     
     convenience init(context: NSManagedObjectContext, href: String) {

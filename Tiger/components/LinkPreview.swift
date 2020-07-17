@@ -13,31 +13,42 @@ struct LinkPreview: View {
     let link: ScannedLink
     
     var body: some View {
-        HStack(spacing: 20) {
-            link.thumbnail
-                .resizable()
-                .modifier(CircleImage())
-                .frame(width: 50, height: 50, alignment: .center)
+        HStack(spacing: 30) {
+            HStack(spacing: 20) {
+                link.thumbnail
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60)
+                    .padding(5)
+                    .background(Color.white)
+                    .cornerRadius(10)
+                    .modifier(MUIShadow(elevation: .one))
+                    
                 
-            VStack(alignment: .leading) {
-                Text(link.name)
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .lineLimit(1)
-                Spacer()
-                Text(link.href)
-                    .lineLimit(1)
+                VStack(alignment: .leading, spacing: 7) {
+                    Text(link.name)
+                        .font(.headline)
+                        .lineLimit(1)
+                    Text(link.href)
+                        .font(.subheadline)
+                        .lineLimit(2)
+                }.modifier(Stretch(direction: .horizontal, alignment: .leading))
             }
             
-            Spacer()
+            Image(systemName: "chevron.right")
+                .font(.system(size: 24))
         }
-        .padding(.vertical)
-        .modifier(Stretch(direction: .horizontal))
+        .padding()
+        .padding(.trailing, 10)
     }
 }
 
 struct LinkPreview_Previews: PreviewProvider {
     static var previews: some View {
-        LinkPreview(link: ScannedLink.example)
+        VStack {
+            LinkPreview(link: ScannedLink.shortExample)
+            LinkPreview(link: ScannedLink.longExample)
+            LinkPreview(link: ScannedLink.example)
+        }
     }
 }
