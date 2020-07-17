@@ -30,40 +30,48 @@ struct SearchBar: View {
                             .padding(.leading, 8)
                         
                         if isEditing {
-                            Button(action: {
-                                self.text = ""
-                                
-                            }) {
+                            Button(action: { self.text = "" }) {
                                 Image(systemName: "multiply.circle.fill")
                                     .foregroundColor(.gray)
                                     .padding(.trailing, 8)
                             }
                         }
                     }
+                    .modifier(Stretch(direction: .horizontal))
                 )
+                .transition(.scale)
+                .animation(.linear)
                 .onTapGesture {
                     self.isEditing = true
                 }
             
             if isEditing {
-                Button(action: {
-                    self.isEditing = false
-                    self.text = ""
-                    
-                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-                }) {
+                Button(action: cancelediting) {
                     Text("Cancel")
                 }
                 .padding(.trailing, 10)
                 .transition(.move(edge: .trailing))
-                .animation(.default)
+                .animation(.linear)
             }
         }
     }
 }
 
+private extension SearchBar {
+    
+    func cancelediting() {
+        isEditing = false
+        text = ""
+        dismissKeyboard()
+    }
+    
+}
+
 struct SearchBar_Previews: PreviewProvider {
+    
+    @State private static var text = ""
+    
     static var previews: some View {
-        SearchBar(text: .constant(""))
+        SearchBar(text: $text)
     }
 }
