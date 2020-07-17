@@ -82,11 +82,15 @@ extension ScannedLink {
     
     var name: String {
         get {
-            guard let url = self.url else {
+            guard let host = url?.host else {
                 return href
             }
             
-            return url.host ?? href
+            if host.starts(with: "www.") {
+                return String(host.suffix(host.count - 4))
+            }
+            
+            return host
         }
     }
     
