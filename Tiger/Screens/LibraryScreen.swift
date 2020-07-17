@@ -32,7 +32,7 @@ struct LibraryScreen: View {
             NavigationView {
                 ScrollView {
                     SearchBar(text: $filterText)
-                        .padding(.horizontal)
+                        .padding()
                     VStack {
                         ForEach(links.filter(filter(_:)).sorted(by: compare(_:_:)), id: \.id) { link in
                             NavigationLink(destination: LinkDetailScreen(for: link)) {
@@ -59,17 +59,19 @@ struct LibraryScreen: View {
                     }
                 }
                 .navigationBarTitle(Text("My Library"))
-                .navigationBarItems(
-                    leading:
+                .navigationBarItems(trailing:
+                    HStack(spacing: 20) {
+                        Spacer()
+                        
                         Picker(selection: $sortCondition, label: Text("Sort By: ")) {
                             Text("Date").tag(SortCondition.date)
                             Text("Name").tag(SortCondition.name)
-                        }.pickerStyle(SegmentedPickerStyle()),
-                    trailing:
+                        }.pickerStyle(SegmentedPickerStyle())
                         Button(action: toggleSortDirection) {
                             Image(systemName: sortAscending ? "arrow.up.circle" : "arrow.down.circle")
                                     .resizable()
                         }.buttonStyle(IconButtonStyle())
+                    }   
                 )
             }
         }
