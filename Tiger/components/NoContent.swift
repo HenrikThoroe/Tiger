@@ -12,6 +12,8 @@ struct NoContent: View {
     
     var body: some View {
         VStack(spacing: 0) {
+            Spacer(minLength: 100)
+            
             Image("NoContent")
                 .resizable()
                 .scaledToFill()
@@ -19,6 +21,13 @@ struct NoContent: View {
             Rectangle()
                 .fill(Color("Water"))
                 .scaledToFill()
+                .overlay(
+                    Text("This is the place where all your scanned links will go. Start filling this place by using the scanner.")
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(.white)
+                        .padding()
+                )
         }
         .scaledToFit()
     }
