@@ -28,6 +28,7 @@ extension ImageResultFilter {
     
     func clear() {
         results = []
+        groups = []
     }
     
 }
