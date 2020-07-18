@@ -72,19 +72,21 @@ struct ScannerScreen: View {
                 
                 Spacer()
                 
-                Button(action: { self.showCamera = false }) {
-                    VStack(spacing: 15) {
-                        Text(results.isEmpty ? "Nothing Found yet" : "Found \(imageFilter.results.count) Links")
-                            .font(.headline)
-                            .fontWeight(.heavy)
-                        Text("Click to View your Results")
-                            .font(.caption)
+                if imageFilter.results.count > 0 {
+                    Button(action: { self.showCamera = false }) {
+                        VStack(spacing: 15) {
+                            Text(results.isEmpty ? "Nothing Found yet" : "Found \(imageFilter.results.count) Links")
+                                .font(.headline)
+                                .fontWeight(.heavy)
+                            Text("Click to View your Results")
+                                .font(.caption)
+                        }
+                        .padding(.horizontal)
                     }
-                    .padding(.horizontal)
+                    .buttonStyle(MaterialButtonStyle())
+                    .modifier(MUIShadow(elevation: .three))
+                    .offset(y: -20)
                 }
-                .buttonStyle(MaterialButtonStyle())
-                .modifier(MUIShadow(elevation: .three))
-                .offset(y: -20)
             }
         }
     }
