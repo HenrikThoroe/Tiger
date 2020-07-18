@@ -111,12 +111,6 @@ extension CameraView {
             
             guard let backCamera = AVCaptureDevice.default(for: .video) else {
                 print("Failed to access back camera!")
-                
-                let demoView = UIImageView(image: UIImage(named: "Demo")!)
-                
-                view.addSubview(demoView)
-                view.autoresizesSubviews = true
-                
                 return
             }
             

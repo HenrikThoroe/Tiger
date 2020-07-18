@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ScannerScreen: View {
     
@@ -20,38 +21,35 @@ struct ScannerScreen: View {
     
     @State private var showCamera: Bool = true
     
+    @State private var allowCamera = false
+    
     @ObservedObject private var imageFilter = ImageResultFilter()
     
     private let imageProcessor = ImageProcessor()
-    
-//    init() {
-//        self.imageProcessor = ImageProcessor { result in
-//            self.handleScannerResult(result)
-//        }
-//    }
     
     var body: some View {
         VStack {
             
             if showCamera {
                 GeometryReader { proxy in
-                    ZStack {
+                    if self.allowCamera {
                         self.camera(in: proxy)
-                           .edgesIgnoringSafeArea(.top)
-                   }
+                            .edgesIgnoringSafeArea(.top)
+                    } else {
+                        CameraDenied()
+                    }
                 }
             } else {
                 preview()
                     .modifier(Stretch(direction: .both))
             }
-            
-//            preview()
-//                .frame(height: 200, alignment: .top)
-//                .modifier(Stretch(direction: .horizontal))
         }
         .sheet(isPresented: $showSaveSheet) {
             SaveScreen(scannerResult: Binding(self.$resultToSave)!, isPresented: self.$showSaveSheet)
                 .environment(\.managedObjectContext, self.managedObjectContext)
+        }
+        .onAppear {
+            self.requestCameraPermission()
         }
     }
     
@@ -127,6 +125,20 @@ struct ScannerScreen: View {
 
 extension ScannerScreen {
     
+    func requestCameraPermission() {
+        if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+            allowCamera = true
+        } else {
+            AVCaptureDevice.requestAccess(for: .video) { granted in
+               if granted {
+                    self.allowCamera = true
+               } else {
+                    self.allowCamera = false
+               }
+           }
+        }
+    }
+    
     func handleScannerResult(_ result: ImageProcessor.Result) {
         if !results.contains(where: { $0.value == result.value }) {
             results += [result]
@@ -137,10 +149,6 @@ extension ScannerScreen {
     func prepareSave(of result: ImageProcessor.Result) {
         resultToSave = result
         showSaveSheet = true
-    }
-    
-    func addExample() {
-        _ = ScannedLink(context: self.managedObjectContext, href: "https://www.example.com/blabla/bla")
     }
     
 }
