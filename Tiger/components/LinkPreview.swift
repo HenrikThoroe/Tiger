@@ -12,6 +12,8 @@ struct LinkPreview: View {
     
     let link: ScannedLink
     
+    var customNavigationHint: Bool = false
+    
     var body: some View {
         HStack(spacing: 30) {
             HStack(spacing: 20) {
@@ -35,8 +37,10 @@ struct LinkPreview: View {
                 }.modifier(Stretch(direction: .horizontal, alignment: .leading))
             }
             
-            Image(systemName: "chevron.right")
-                .font(.system(size: 24))
+            if customNavigationHint {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 24))
+            }
         }
         .padding()
         .padding(.trailing, 10)

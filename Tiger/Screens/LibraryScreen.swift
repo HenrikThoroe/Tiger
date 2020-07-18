@@ -30,17 +30,27 @@ struct LibraryScreen: View {
     @State private var sharedUrl: URL? = nil
     
     var body: some View {
+        Group {
+            if links.count > 0 {
+                main()
+            } else {
+                NoContent()
+            }
+        }
+    }
+    
+}
+
+extension LibraryScreen {
+    
+    func main() -> some View {
         VStack {
             NavigationView {
-                ScrollView {
+                VStack {
                     SearchBar(text: $filterText)
                         .padding()
                     
-                    if links.count > 0 {
-                        content()
-                    } else {
-                        NoContent()
-                    }
+                    content()
                 }
                 .navigationBarTitle(Text("My Library"))
                 .navigationBarItems(trailing:
@@ -55,7 +65,7 @@ struct LibraryScreen: View {
                             Image(systemName: sortAscending ? "arrow.up.circle" : "arrow.down.circle")
                                     .resizable()
                         }.buttonStyle(IconButtonStyle())
-                    }   
+                    }
                 )
                 .sheet(item: $sharedUrl) { url in
                     ShareSheet(activityItems: [url as Any])
@@ -64,32 +74,29 @@ struct LibraryScreen: View {
         }
     }
     
-}
-
-extension LibraryScreen {
-    
     func content() -> some View {
-        VStack {
-            ForEach(links.filter(filter(_:)).sorted(by: compare(_:_:)), id: \.id) { link in
+        List {
+            ForEach(displayedItems(), id: \.id) { link in
                 NavigationLink(destination: LinkDetailScreen(for: link)) {
                     LinkPreview(link: link)
+                        .contextMenu {
+                            Button(action: link.open) {
+                                Text("Open in Browser")
+                                Image(systemName: "link")
+                            }
+                            
+                            Button(action: { self.sharedUrl = link.url }) {
+                                Text("Share")
+                                Image(systemName: "square.and.arrow.up")
+                            }
+                        }
                 }
-                .buttonStyle(ListButtonStyle())
-                .contextMenu {
-                    Button(action: link.open) {
-                        Text("Open in Browser")
-                        Image(systemName: "link")
-                    }
-                    
-                    Button(action: { self.sharedUrl = link.url }) {
-                        Text("Share")
-                        Image(systemName: "square.and.arrow.up")
-                    }
-                    
-                    Button(action: { self.delete(link: link) }) {
-                        Text("Delete")
-                        Image(systemName: "trash")
-                    }.foregroundColor(.red)
+            }
+            .onDelete { indexSet in
+                let displayed = self.displayedItems()
+                
+                indexSet.forEach { index in
+                    self.delete(link: displayed[index])
                 }
             }
         }
@@ -98,6 +105,10 @@ extension LibraryScreen {
 }
 
 private extension LibraryScreen {
+    
+    func displayedItems() -> [ScannedLink] {
+        links.filter(filter(_:)).sorted(by: compare(_:_:))
+    }
     
     func delete(link: ScannedLink) {
         managedObjectContext.delete(link)
