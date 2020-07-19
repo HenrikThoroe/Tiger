@@ -57,7 +57,7 @@ private extension ImageResultFilter {
             
             for (idx, item) in group.enumerated() {
                 for (idx1, item1) in group.enumerated() {
-                    mat[idx][idx1] = item.value.similarity(to: item1.value)
+                    mat[idx][idx1] = (item.value.similarity(to: item1.value) + item.confidence * 2) / 3
                 }
             }
             

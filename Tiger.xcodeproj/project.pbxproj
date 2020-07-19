@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0CF21D24C4B02B0089FE87 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */; };
 		AF15C7FC24A79FE1004E3E60 /* InfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FB24A79FE1004E3E60 /* InfoCard.swift */; };
 		AF15C7FE24A7A0F4004E3E60 /* LinkDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FD24A7A0F4004E3E60 /* LinkDetailScreen.swift */; };
 		AF15C80024A7A246004E3E60 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FF24A7A246004E3E60 /* CircleImage.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		AF15C7FB24A79FE1004E3E60 /* InfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCard.swift; sourceTree = "<group>"; };
 		AF15C7FD24A7A0F4004E3E60 /* LinkDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDetailScreen.swift; sourceTree = "<group>"; };
 		AF15C7FF24A7A246004E3E60 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				AF717A3024A67223007E641E /* ScannedLink.swift */,
 				AF4050DF24AD0C4B006F2143 /* ImageProcessor.swift */,
 				AFD515AF24BA3E6C001A4EC5 /* ImageResultFilter.swift */,
+				AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				AF15C80624A7D725004E3E60 /* IconButtonStyle.swift in Sources */,
 				AFD515B024BA3E6C001A4EC5 /* ImageResultFilter.swift in Sources */,
 				AFBA6C4A24C1C12300E1E860 /* ListButtonStyle.swift in Sources */,
+				AF0CF21D24C4B02B0089FE87 /* NetworkObserver.swift in Sources */,
 				AF6151EA24A200E700E158C7 /* SceneDelegate.swift in Sources */,
 				AF6151EF24A200E700E158C7 /* MainScreen.swift in Sources */,
 				AF2F196824C0E32E00345A98 /* FlatButtonStyle.swift in Sources */,

@@ -38,7 +38,7 @@ extension ImageProcessor {
     
     struct Result: Identifiable, Hashable {
         var value: String
-        let confidence: Double
+        var confidence: Double
         let location: CGRect
         let id = UUID()
         
@@ -126,7 +126,29 @@ private extension ImageProcessor {
             }
         
         for res in recognizedText {
-            resultHandler(Result(value: res.0, confidence: Double(res.1), location: res.2))
+            validate(result: Result(value: res.0, confidence: Double(res.1), location: res.2))
+        }
+    }
+    
+    func validate(result: Result) {
+        var result = result
+        guard let url = URL(string: result.value) else {
+            return
+        }
+        
+        url.ping { pingResult in
+            if case let .success(status) = pingResult {
+                switch status {
+                case .ok:
+                    result.confidence = 1.0
+                case .invalidQuery:
+                    result.confidence = 0.6
+                }
+            } else {
+                result.confidence *= 0.5
+            }
+            
+            self.resultHandler(result)
         }
     }
     
