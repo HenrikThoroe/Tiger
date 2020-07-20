@@ -73,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
+		AF0CF21E24C603B80089FE87 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AF15C7FB24A79FE1004E3E60 /* InfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCard.swift; sourceTree = "<group>"; };
 		AF15C7FD24A7A0F4004E3E60 /* LinkDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDetailScreen.swift; sourceTree = "<group>"; };
 		AF15C7FF24A7A246004E3E60 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -160,6 +161,7 @@
 		AF6151DB24A200E700E158C7 = {
 			isa = PBXGroup;
 			children = (
+				AF0CF21E24C603B80089FE87 /* README.md */,
 				AF6151E624A200E700E158C7 /* Tiger */,
 				AF61520024A200EB00E158C7 /* TigerTests */,
 				AF61520B24A200EB00E158C7 /* TigerUITests */,
