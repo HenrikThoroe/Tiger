@@ -23,6 +23,12 @@ struct ScannerScreen: View {
     
     @State private var allowCamera = false
     
+    @State private var pauseCamera = false
+    
+    @State private var lastScannerEvent = Date()
+    
+    @State private var timer: Timer?
+    
     @ObservedObject private var imageFilter = ImageResultFilter()
     
     private let imageProcessor = ImageProcessor()
@@ -31,12 +37,16 @@ struct ScannerScreen: View {
         VStack {
             
             if showCamera {
-                GeometryReader { proxy in
-                    if self.allowCamera {
-                        self.camera(in: proxy)
-                            .edgesIgnoringSafeArea(.top)
-                    } else {
-                        CameraDenied()
+                if pauseCamera {
+                    pauseScreen()
+                } else {
+                    GeometryReader { proxy in
+                        if self.allowCamera {
+                            self.camera(in: proxy)
+                                .edgesIgnoringSafeArea(.top)
+                        } else {
+                            CameraDenied()
+                        }
                     }
                 }
             } else {
@@ -50,6 +60,10 @@ struct ScannerScreen: View {
         }
         .onAppear {
             self.requestCameraPermission()
+            self.setupTimer()
+        }
+        .onDisappear {
+            self.deleteTimer()
         }
     }
     
@@ -123,9 +137,52 @@ struct ScannerScreen: View {
             }
         }
     }
+    
+    func pauseScreen() -> some View {
+        let resume = {
+            self.pauseCamera = false
+            self.lastScannerEvent = Date()
+        }
+        
+        return VStack(spacing: 50) {
+            VStack(spacing: 30) {
+                Image("Battery")
+                    .resizable()
+                    .scaledToFit()
+                    .padding()
+                
+                Text("Scanning has been paused to save your battery power.")
+                    .font(.headline)
+                    .multilineTextAlignment(.center)
+            }.padding()
+            
+            Button(action: resume) {
+                Text("Resume").modifier(Stretch(direction: .horizontal))
+            }.buttonStyle(FlatButtonStyle())
+        }.padding()
+    }
 }
 
-extension ScannerScreen {
+private extension ScannerScreen {
+    
+    func setupTimer() {
+        self.timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
+            self.timerAction()
+        }
+    }
+    
+    func timerAction() {
+        let elapsed = Date().timeIntervalSince(lastScannerEvent)
+        
+        if elapsed >= 60 {
+            pauseCamera = true
+        }
+    }
+    
+    func deleteTimer() {
+        self.timer?.invalidate()
+        self.timer = nil
+    }
     
     func requestCameraPermission() {
         if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
@@ -142,6 +199,8 @@ extension ScannerScreen {
     }
     
     func handleScannerResult(_ result: ImageProcessor.Result) {
+        lastScannerEvent = Date()
+        
         if !results.contains(where: { $0.value == result.value }) {
             results += [result]
             imageFilter.feed(with: result)
