@@ -48,7 +48,7 @@ extension LibraryScreen {
             NavigationView {
                 VStack {
                     SearchBar(text: $filterText)
-                        .padding()
+                        .padding([.top, .leading, .trailing])
                     
                     content()
                 }
