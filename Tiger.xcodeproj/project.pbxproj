@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF0CF21D24C4B02B0089FE87 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */; };
+		AF0CF22324C772150089FE87 /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22224C772150089FE87 /* NameEditView.swift */; };
 		AF15C7FC24A79FE1004E3E60 /* InfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FB24A79FE1004E3E60 /* InfoCard.swift */; };
 		AF15C7FE24A7A0F4004E3E60 /* LinkDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FD24A7A0F4004E3E60 /* LinkDetailScreen.swift */; };
 		AF15C80024A7A246004E3E60 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FF24A7A246004E3E60 /* CircleImage.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		AF0CF21E24C603B80089FE87 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AF0CF22224C772150089FE87 /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
 		AF15C7FB24A79FE1004E3E60 /* InfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCard.swift; sourceTree = "<group>"; };
 		AF15C7FD24A7A0F4004E3E60 /* LinkDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDetailScreen.swift; sourceTree = "<group>"; };
 		AF15C7FF24A7A246004E3E60 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				AFBA6C4B24C1DDA100E1E860 /* ShareSheet.swift */,
 				AFBA6C4F24C21D4200E1E860 /* NoContent.swift */,
 				AF8896C624C30A1D000183FA /* CameraDenied.swift */,
+				AF0CF22224C772150089FE87 /* NameEditView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				AF15C7FE24A7A0F4004E3E60 /* LinkDetailScreen.swift in Sources */,
 				AF4050E024AD0C4B006F2143 /* ImageProcessor.swift in Sources */,
 				AF15C7FC24A79FE1004E3E60 /* InfoCard.swift in Sources */,
+				AF0CF22324C772150089FE87 /* NameEditView.swift in Sources */,
 				AF29A26C24A895A000308D45 /* SaveScreen.swift in Sources */,
 				AF29A26E24A8A24000308D45 /* dismissKeyboard.swift in Sources */,
 				AFBA6C4C24C1DDA100E1E860 /* ShareSheet.swift in Sources */,

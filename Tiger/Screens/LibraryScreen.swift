@@ -77,7 +77,7 @@ extension LibraryScreen {
     func content() -> some View {
         List {
             ForEach(displayedItems(), id: \.id) { link in
-                NavigationLink(destination: LinkDetailScreen(for: link)) {
+                NavigationLink(destination: LinkDetailScreen(link: link)) {
                     LinkPreview(link: link)
                         .contextMenu {
                             Button(action: link.open) {

@@ -22,28 +22,44 @@ struct LinkDetailScreen: View {
     
     @State private var showShareSheet: Bool = false
     
-    init(for link: ScannedLink) {
-        self.link = link
+    @State private var editMode = EditMode.inactive
+
+    private var hrefBinding: Binding<String> {
+        Binding(get: { self.link.href }) {
+            self.link.href = $0
+            try? self.managedObjectContext.save()
+        }
     }
     
     var body: some View {
         GeometryReader { proxy in
-            VStack {
-                VStack(spacing: 30) {
-                    self.image(in: proxy)
-                    self.headlines()
+            if self.editMode == .active {
+                NameEditView(name: self.hrefBinding, keyboard: .URL)
+            } else {
+                VStack {
+                    VStack(spacing: 30) {
+                        self.image(in: proxy)
+                        self.headlines()
+                    }
+
+                    Spacer()
+                    
+                    if self.editMode == .active {
+                        Text("Editing")
+                    }
+
+                    DateDisplay(date: self.link.scanned)
+
+                    Spacer()
+
+                    self.toolbar()
                 }
-
-                Spacer()
-
-                DateDisplay(date: self.link.scanned)
-
-                Spacer()
-
-                self.toolbar()
+                .padding()
             }
-            .padding()
         }
+        .navigationBarTitle("Details", displayMode: .inline)
+        .navigationBarItems(trailing: EditButton())
+        .environment(\.editMode, $editMode)
         .onDisappear(perform: handleDisappear)
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(activityItems: [self.link.url as Any])
@@ -89,8 +105,6 @@ struct LinkDetailScreen: View {
         link.thumbnail
             .resizable()
             .scaledToFit()
-//            .modifier(CircleImage())
-//            .modifier(Stretch(direction: .horizontal))
             .frame(width: proxy.size.width * 0.5, height: proxy.size.width * 0.5)
     }
     
@@ -136,7 +150,9 @@ extension LinkDetailScreen {
 
 struct LinkDetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LinkDetailScreen(for: ScannedLink.example)
+        NavigationView {
+            LinkDetailScreen(link: ScannedLink.example)
+        }
     }
 }
 
