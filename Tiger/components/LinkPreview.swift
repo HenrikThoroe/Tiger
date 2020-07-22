@@ -16,23 +16,22 @@ struct LinkPreview: View {
     
     var body: some View {
         HStack(spacing: 30) {
-            HStack(spacing: 20) {
+            HStack(alignment: .top, spacing: 20) {
                 link.thumbnail
                     .resizable()
-                    .scaledToFit()
+                    .scaledToFill()
                     .frame(width: 60, height: 60)
-                    .padding(5)
                     .background(Color.white)
                     .cornerRadius(10)
-                    .modifier(MUIShadow(elevation: .one))
                     
                 
                 VStack(alignment: .leading, spacing: 7) {
                     Text(link.name)
-                        .font(.headline)
+                        .font(.system(size: 20, weight: .bold, design: .rounded))
                         .lineLimit(1)
+                    
                     Text(link.href)
-                        .font(.subheadline)
+                        .font(.system(size: 16, weight: .medium, design: .default))
                         .lineLimit(2)
                 }.modifier(Stretch(direction: .horizontal, alignment: .leading))
             }
