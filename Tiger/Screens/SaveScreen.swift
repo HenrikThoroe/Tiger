@@ -16,14 +16,12 @@ struct SaveScreen: View {
     
     @Binding var isPresented: Bool
     
-    @State private var editMode: Bool = false
+    @State private var editMode: EditMode = .inactive
     
     var body: some View {
         VStack {
             HStack {
-                Button(action: toggleEdit) {
-                    Text(editMode ? "Cancel Edit" : "Edit")
-                }.buttonStyle(TextButtonStyle(highlight: true))
+                EditButton()
                 
                 Spacer()
                 
@@ -34,51 +32,50 @@ struct SaveScreen: View {
             
             Spacer()
             
-            ZStack {
-                Text(scannerResult.value)
-                    .font(.title)
-                    .fontWeight(.heavy)
-                    .multilineTextAlignment(.center)
-                    .opacity(editMode ? 0 : 1)
-                    .onTapGesture(perform: toggleEdit)
-                
-                TextField("Edit your link...", text: $scannerResult.value, onCommit: toggleEdit)
-                    .font(.system(size: 24, weight: .heavy, design: .default))
-                    .textContentType(.URL)
-                    .keyboardType(.URL)
-                    .opacity(editMode ? 1 : 0)
+            if editMode == .active {
+                NameEditView(name: $scannerResult.value)
+            } else {
+                Group {
+                    Text(scannerResult.value)
+                        .font(.title)
+                        .fontWeight(.heavy)
+                        .multilineTextAlignment(.center)
+                        .onTapGesture(perform: toggleEdit)
+                    
+                    Spacer()
+                    
+                    VStack(spacing: 20) {
+                        Button(action: saveAndOpen) {
+                            Text("Save and Open in Safari")
+                                .foregroundColor(.white)
+                                .modifier(Stretch(direction: .horizontal))
+                        }.buttonStyle(FlatButtonStyle())
+                        
+                        Button(action: save) {
+                            Text("Save and Scan More")
+                                .foregroundColor(.white)
+                                .modifier(Stretch(direction: .horizontal))
+                        }.buttonStyle(FlatButtonStyle())
+                    }
+                    
+                    Spacer()
+                    
+                    Button(action: dismissSheet) {
+                        Text("Discard")
+                            .foregroundColor(.white)
+                            .modifier(Stretch(direction: .horizontal))
+                    }.buttonStyle(FlatButtonStyle(type: .destructive))
+                    
+                    Spacer()
+                    
+                    Text("Are there any mistakes? You can edit the link!")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                }
             }
-            
-            Spacer()
-            
-            VStack(spacing: 20) {
-                Button(action: saveAndOpen) {
-                    Text("Save and Open in Safari")
-                        .foregroundColor(.white)
-                        .modifier(Stretch(direction: .horizontal))
-                }.buttonStyle(ButtonComponent.Style(background: .defaultHighlight))
-                
-                Button(action: save) {
-                    Text("Save and Scan More")
-                        .foregroundColor(.white)
-                        .modifier(Stretch(direction: .horizontal))
-                }.buttonStyle(ButtonComponent.Style(background: .defaultHighlight))
-            }
-            
-            Spacer()
-            
-            Button(action: dismissSheet) {
-                Text("Discard")
-                    .foregroundColor(.white)
-                    .modifier(Stretch(direction: .horizontal))
-            }.buttonStyle(ButtonComponent.Style(background: .destructiveHighlight))
-            
-            Spacer()
-            
-            Text("Are there any mistakes? You can edit the link!")
-                .font(.footnote)
-                .multilineTextAlignment(.center)
-        }.padding()
+        }
+        .padding()
+        .environment(\.editMode, $editMode)
     }
 }
 
@@ -104,11 +101,12 @@ extension SaveScreen {
     }
     
     func toggleEdit() {
-        if editMode {
+        if editMode == .active {
             dismissKeyboard()
+            editMode = .inactive
+        } else {
+            editMode = .active
         }
-        
-        editMode.toggle()
     }
     
 }
