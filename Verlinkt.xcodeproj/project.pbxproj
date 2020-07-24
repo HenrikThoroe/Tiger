@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF026D0224CB2A5600ADBC70 /* Verlinkt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF6151EB24A200E700E158C7 /* Verlinkt.xcdatamodeld */; };
 		AF0CF21D24C4B02B0089FE87 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */; };
 		AF0CF22324C772150089FE87 /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22224C772150089FE87 /* NameEditView.swift */; };
 		AF0CF22524C89DB00089FE87 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22424C89DB00089FE87 /* FilterOptions.swift */; };
@@ -34,7 +35,6 @@
 		AF5FBC9E24A4E1170009D7DF /* LibraryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FBC9D24A4E1170009D7DF /* LibraryScreen.swift */; };
 		AF6151E824A200E700E158C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6151E724A200E700E158C7 /* AppDelegate.swift */; };
 		AF6151EA24A200E700E158C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6151E924A200E700E158C7 /* SceneDelegate.swift */; };
-		AF6151ED24A200E700E158C7 /* Tiger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF6151EB24A200E700E158C7 /* Tiger.xcdatamodeld */; };
 		AF6151EF24A200E700E158C7 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6151EE24A200E700E158C7 /* MainScreen.swift */; };
 		AF6151F124A200EA00E158C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6151F024A200EA00E158C7 /* Assets.xcassets */; };
 		AF6151F424A200EA00E158C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF6151F324A200EA00E158C7 /* Preview Assets.xcassets */; };
@@ -104,19 +104,19 @@
 		AF5FBC9924A3A2550009D7DF /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		AF5FBC9B24A4E0A00009D7DF /* ScannerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerScreen.swift; sourceTree = "<group>"; };
 		AF5FBC9D24A4E1170009D7DF /* LibraryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryScreen.swift; sourceTree = "<group>"; };
-		AF6151E424A200E700E158C7 /* Tiger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6151E424A200E700E158C7 /* Verlinkt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Verlinkt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6151E724A200E700E158C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF6151E924A200E700E158C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF6151EC24A200E700E158C7 /* Tiger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tiger.xcdatamodel; sourceTree = "<group>"; };
+		AF6151EC24A200E700E158C7 /* Verlinkt.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Verlinkt.xcdatamodel; sourceTree = "<group>"; };
 		AF6151EE24A200E700E158C7 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		AF6151F024A200EA00E158C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF6151F324A200EA00E158C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF6151F624A200EA00E158C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF6151F824A200EA00E158C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF6151FD24A200EB00E158C7 /* TigerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TigerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6151FD24A200EB00E158C7 /* VerlinktTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerlinktTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF61520124A200EB00E158C7 /* TigerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TigerTests.swift; sourceTree = "<group>"; };
 		AF61520324A200EB00E158C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF61520824A200EB00E158C7 /* TigerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TigerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF61520824A200EB00E158C7 /* VerlinktUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VerlinktUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF61520C24A200EB00E158C7 /* TigerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TigerUITests.swift; sourceTree = "<group>"; };
 		AF61520E24A200EB00E158C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF61521F24A201F200E158C7 /* ButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonComponent.swift; sourceTree = "<group>"; };
@@ -176,9 +176,9 @@
 			isa = PBXGroup;
 			children = (
 				AF0CF21E24C603B80089FE87 /* README.md */,
-				AF6151E624A200E700E158C7 /* Tiger */,
-				AF61520024A200EB00E158C7 /* TigerTests */,
-				AF61520B24A200EB00E158C7 /* TigerUITests */,
+				AF6151E624A200E700E158C7 /* Verlinkt */,
+				AF61520024A200EB00E158C7 /* VerlinktTests */,
+				AF61520B24A200EB00E158C7 /* VerlinktUITests */,
 				AF6151E524A200E700E158C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -186,14 +186,14 @@
 		AF6151E524A200E700E158C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF6151E424A200E700E158C7 /* Tiger.app */,
-				AF6151FD24A200EB00E158C7 /* TigerTests.xctest */,
-				AF61520824A200EB00E158C7 /* TigerUITests.xctest */,
+				AF6151E424A200E700E158C7 /* Verlinkt.app */,
+				AF6151FD24A200EB00E158C7 /* VerlinktTests.xctest */,
+				AF61520824A200EB00E158C7 /* VerlinktUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF6151E624A200E700E158C7 /* Tiger */ = {
+		AF6151E624A200E700E158C7 /* Verlinkt */ = {
 			isa = PBXGroup;
 			children = (
 				AF61522424A20EF100E158C7 /* Utils */,
@@ -204,7 +204,7 @@
 				AF61521A24A2010800E158C7 /* Assets */,
 				AF6151F224A200EA00E158C7 /* Preview Content */,
 			);
-			path = Tiger;
+			path = Verlinkt;
 			sourceTree = "<group>";
 		};
 		AF6151F224A200EA00E158C7 /* Preview Content */ = {
@@ -215,22 +215,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		AF61520024A200EB00E158C7 /* TigerTests */ = {
+		AF61520024A200EB00E158C7 /* VerlinktTests */ = {
 			isa = PBXGroup;
 			children = (
 				AF61520124A200EB00E158C7 /* TigerTests.swift */,
 				AF61520324A200EB00E158C7 /* Info.plist */,
 			);
-			path = TigerTests;
+			path = VerlinktTests;
 			sourceTree = "<group>";
 		};
-		AF61520B24A200EB00E158C7 /* TigerUITests */ = {
+		AF61520B24A200EB00E158C7 /* VerlinktUITests */ = {
 			isa = PBXGroup;
 			children = (
 				AF61520C24A200EB00E158C7 /* TigerUITests.swift */,
 				AF61520E24A200EB00E158C7 /* Info.plist */,
 			);
-			path = TigerUITests;
+			path = VerlinktUITests;
 			sourceTree = "<group>";
 		};
 		AF61521A24A2010800E158C7 /* Assets */ = {
@@ -239,7 +239,7 @@
 				AF6151F024A200EA00E158C7 /* Assets.xcassets */,
 				AF6151F524A200EA00E158C7 /* LaunchScreen.storyboard */,
 				AF6151F824A200EA00E158C7 /* Info.plist */,
-				AF6151EB24A200E700E158C7 /* Tiger.xcdatamodeld */,
+				AF6151EB24A200E700E158C7 /* Verlinkt.xcdatamodeld */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -344,9 +344,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF6151E324A200E700E158C7 /* Tiger */ = {
+		AF6151E324A200E700E158C7 /* Verlinkt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF61521124A200EB00E158C7 /* Build configuration list for PBXNativeTarget "Tiger" */;
+			buildConfigurationList = AF61521124A200EB00E158C7 /* Build configuration list for PBXNativeTarget "Verlinkt" */;
 			buildPhases = (
 				AF6151E024A200E700E158C7 /* Sources */,
 				AF6151E124A200E700E158C7 /* Frameworks */,
@@ -356,17 +356,17 @@
 			);
 			dependencies = (
 			);
-			name = Tiger;
+			name = Verlinkt;
 			packageProductDependencies = (
 				AF29A26924A8834800308D45 /* FavIcon */,
 			);
 			productName = Tiger;
-			productReference = AF6151E424A200E700E158C7 /* Tiger.app */;
+			productReference = AF6151E424A200E700E158C7 /* Verlinkt.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AF6151FC24A200EB00E158C7 /* TigerTests */ = {
+		AF6151FC24A200EB00E158C7 /* VerlinktTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF61521424A200EB00E158C7 /* Build configuration list for PBXNativeTarget "TigerTests" */;
+			buildConfigurationList = AF61521424A200EB00E158C7 /* Build configuration list for PBXNativeTarget "VerlinktTests" */;
 			buildPhases = (
 				AF6151F924A200EB00E158C7 /* Sources */,
 				AF6151FA24A200EB00E158C7 /* Frameworks */,
@@ -377,14 +377,14 @@
 			dependencies = (
 				AF6151FF24A200EB00E158C7 /* PBXTargetDependency */,
 			);
-			name = TigerTests;
+			name = VerlinktTests;
 			productName = TigerTests;
-			productReference = AF6151FD24A200EB00E158C7 /* TigerTests.xctest */;
+			productReference = AF6151FD24A200EB00E158C7 /* VerlinktTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		AF61520724A200EB00E158C7 /* TigerUITests */ = {
+		AF61520724A200EB00E158C7 /* VerlinktUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF61521724A200EB00E158C7 /* Build configuration list for PBXNativeTarget "TigerUITests" */;
+			buildConfigurationList = AF61521724A200EB00E158C7 /* Build configuration list for PBXNativeTarget "VerlinktUITests" */;
 			buildPhases = (
 				AF61520424A200EB00E158C7 /* Sources */,
 				AF61520524A200EB00E158C7 /* Frameworks */,
@@ -395,9 +395,9 @@
 			dependencies = (
 				AF61520A24A200EB00E158C7 /* PBXTargetDependency */,
 			);
-			name = TigerUITests;
+			name = VerlinktUITests;
 			productName = TigerUITests;
-			productReference = AF61520824A200EB00E158C7 /* TigerUITests.xctest */;
+			productReference = AF61520824A200EB00E158C7 /* VerlinktUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -423,7 +423,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AF6151DF24A200E700E158C7 /* Build configuration list for PBXProject "Tiger" */;
+			buildConfigurationList = AF6151DF24A200E700E158C7 /* Build configuration list for PBXProject "Verlinkt" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -439,9 +439,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF6151E324A200E700E158C7 /* Tiger */,
-				AF6151FC24A200EB00E158C7 /* TigerTests */,
-				AF61520724A200EB00E158C7 /* TigerUITests */,
+				AF6151E324A200E700E158C7 /* Verlinkt */,
+				AF6151FC24A200EB00E158C7 /* VerlinktTests */,
+				AF61520724A200EB00E158C7 /* VerlinktUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -508,6 +508,7 @@
 				AF29A27324AB955B00308D45 /* AppModel.swift in Sources */,
 				AF15C80224A7A3FE004E3E60 /* DateDisplay.swift in Sources */,
 				AF5FBC9E24A4E1170009D7DF /* LibraryScreen.swift in Sources */,
+				AF026D0224CB2A5600ADBC70 /* Verlinkt.xcdatamodeld in Sources */,
 				AF15C80624A7D725004E3E60 /* IconButtonStyle.swift in Sources */,
 				AFD515B024BA3E6C001A4EC5 /* ImageResultFilter.swift in Sources */,
 				AFBA6C4A24C1C12300E1E860 /* ListButtonStyle.swift in Sources */,
@@ -516,7 +517,6 @@
 				AF6151EF24A200E700E158C7 /* MainScreen.swift in Sources */,
 				AF2F196824C0E32E00345A98 /* FlatButtonStyle.swift in Sources */,
 				AF61522824A27ACB00E158C7 /* SwitchComponent.swift in Sources */,
-				AF6151ED24A200E700E158C7 /* Tiger.xcdatamodeld in Sources */,
 				AF717A3A24A79073007E641E /* LinkPreview.swift in Sources */,
 				AF15C80024A7A246004E3E60 /* CircleImage.swift in Sources */,
 				AF61522324A20CE900E158C7 /* MUIShadow.swift in Sources */,
@@ -548,12 +548,12 @@
 /* Begin PBXTargetDependency section */
 		AF6151FF24A200EB00E158C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AF6151E324A200E700E158C7 /* Tiger */;
+			target = AF6151E324A200E700E158C7 /* Verlinkt */;
 			targetProxy = AF6151FE24A200EB00E158C7 /* PBXContainerItemProxy */;
 		};
 		AF61520A24A200EB00E158C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AF6151E324A200E700E158C7 /* Tiger */;
+			target = AF6151E324A200E700E158C7 /* Verlinkt */;
 			targetProxy = AF61520924A200EB00E158C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -620,10 +620,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Verlinkt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Verlinkt;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -674,9 +676,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Verlinkt/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Verlinkt;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -689,18 +693,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Tiger/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Verlinkt/Preview Content\"";
 				DEVELOPMENT_TEAM = N2QF94LKC6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Tiger/Info.plist;
+				INFOPLIST_FILE = Verlinkt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thoroee.Tiger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoroee.Verlinkt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -709,18 +713,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"Tiger/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Verlinkt/Preview Content\"";
 				DEVELOPMENT_TEAM = N2QF94LKC6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = Tiger/Info.plist;
+				INFOPLIST_FILE = Verlinkt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.thoroee.Tiger;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thoroee.Verlinkt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -742,7 +746,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tiger.app/Tiger";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Verlinkt.app/Verlinkt";
 			};
 			name = Debug;
 		};
@@ -764,7 +768,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tiger.app/Tiger";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Verlinkt.app/Verlinkt";
 			};
 			name = Release;
 		};
@@ -811,7 +815,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF6151DF24A200E700E158C7 /* Build configuration list for PBXProject "Tiger" */ = {
+		AF6151DF24A200E700E158C7 /* Build configuration list for PBXProject "Verlinkt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF61520F24A200EB00E158C7 /* Debug */,
@@ -820,7 +824,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF61521124A200EB00E158C7 /* Build configuration list for PBXNativeTarget "Tiger" */ = {
+		AF61521124A200EB00E158C7 /* Build configuration list for PBXNativeTarget "Verlinkt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF61521224A200EB00E158C7 /* Debug */,
@@ -829,7 +833,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF61521424A200EB00E158C7 /* Build configuration list for PBXNativeTarget "TigerTests" */ = {
+		AF61521424A200EB00E158C7 /* Build configuration list for PBXNativeTarget "VerlinktTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF61521524A200EB00E158C7 /* Debug */,
@@ -838,7 +842,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF61521724A200EB00E158C7 /* Build configuration list for PBXNativeTarget "TigerUITests" */ = {
+		AF61521724A200EB00E158C7 /* Build configuration list for PBXNativeTarget "VerlinktUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF61521824A200EB00E158C7 /* Debug */,
@@ -869,13 +873,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		AF6151EB24A200E700E158C7 /* Tiger.xcdatamodeld */ = {
+		AF6151EB24A200E700E158C7 /* Verlinkt.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AF6151EC24A200E700E158C7 /* Tiger.xcdatamodel */,
+				AF6151EC24A200E700E158C7 /* Verlinkt.xcdatamodel */,
 			);
-			currentVersion = AF6151EC24A200E700E158C7 /* Tiger.xcdatamodel */;
-			path = Tiger.xcdatamodeld;
+			currentVersion = AF6151EC24A200E700E158C7 /* Verlinkt.xcdatamodel */;
+			path = Verlinkt.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
