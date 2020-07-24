@@ -22,10 +22,6 @@ struct LibraryScreen: View {
     
     @State private var filterOptions: FilterOptions = .none
     
-    @State private var filterText: String = ""
-    
-    @State private var sortCondition: SortCondition = .date
-    
     @State private var sortAscending = false
     
     @State private var showDeleteWarning: Bool = false
@@ -44,25 +40,12 @@ struct LibraryScreen: View {
         }
     }
     
-}
-
-extension LibraryScreen {
-    
     func main() -> some View {
         VStack {
             NavigationView {
                 content()
                     .navigationBarTitle(Text("My \(links.count) Links"), displayMode: .automatic)
-                    .navigationBarItems(leading:
-                        Button(action: { self.filterOptions = .none }) {
-                            Text("Reset Filters")
-                        },
-                                        
-                        trailing: Button(action: { self.showListSettings = true }) {
-                            Image(systemName: "gear")
-                                .resizable()
-                        }.buttonStyle(IconButtonStyle())
-                    )
+                    .navigationBarItems(leading: leadingNavigationItems(), trailing: trailingNavigationItems())
                     .sheet(item: $sharedUrl) { url in
                         ShareSheet(activityItems: [url as Any])
                     }
@@ -101,6 +84,26 @@ extension LibraryScreen {
         }
     }
     
+    func leadingNavigationItems() -> some View {
+        Button(action: { self.filterOptions = .none }) {
+            Text("Reset Filters")
+        }
+    }
+    
+    func trailingNavigationItems() -> some View {
+        HStack(spacing: 20) {
+            Button(action: { self.sortAscending.toggle() }) {
+                Image(systemName: sortAscending ? "arrow.up.circle" : "arrow.down.circle")
+                    .resizable()
+            }.buttonStyle(IconButtonStyle())
+            
+            Button(action: { self.showListSettings = true }) {
+                Image(systemName: "gear")
+                    .resizable()
+            }.buttonStyle(IconButtonStyle())
+        }
+    }
+    
 }
 
 private extension LibraryScreen {
@@ -115,15 +118,7 @@ private extension LibraryScreen {
     }
     
     func compare(_ a: ScannedLink, _ b: ScannedLink) -> Bool {
-        if sortCondition == .date {
-            return sortAscending ? a.scanned < b.scanned : a.scanned > b.scanned
-        } else {
-            return sortAscending ? a.name < b.name : a.name > b.name
-        }
-    }
-    
-    func toggleSortDirection() {
-        sortAscending.toggle()
+        sortAscending ? a.scanned < b.scanned : a.scanned > b.scanned
     }
     
     func filter(_ item: ScannedLink) -> Bool {
@@ -144,14 +139,6 @@ private extension LibraryScreen {
         }
         
         return matchesQuery
-    }
-    
-}
-
-extension LibraryScreen {
-    
-    enum SortCondition: Int {
-        case name, date
     }
     
 }
