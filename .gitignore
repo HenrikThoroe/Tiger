@@ -1,3 +1,6 @@
 ./Tiger
 ./TigerTests
 ./TigerUITests
+./Tiger/*
+./TigerTests/*
+./TigerUITests/*
