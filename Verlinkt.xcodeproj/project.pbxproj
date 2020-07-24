@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF026D0224CB2A5600ADBC70 /* Verlinkt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF6151EB24A200E700E158C7 /* Verlinkt.xcdatamodeld */; };
+		AF026D0424CB2E5400ADBC70 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AF026D0324CB2E5400ADBC70 /* .gitignore */; };
 		AF0CF21D24C4B02B0089FE87 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */; };
 		AF0CF22324C772150089FE87 /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22224C772150089FE87 /* NameEditView.swift */; };
 		AF0CF22524C89DB00089FE87 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22424C89DB00089FE87 /* FilterOptions.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF026D0324CB2E5400ADBC70 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		AF0CF21E24C603B80089FE87 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AF0CF22224C772150089FE87 /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		AF6151DB24A200E700E158C7 = {
 			isa = PBXGroup;
 			children = (
+				AF026D0324CB2E5400ADBC70 /* .gitignore */,
 				AF0CF21E24C603B80089FE87 /* README.md */,
 				AF6151E624A200E700E158C7 /* Verlinkt */,
 				AF61520024A200EB00E158C7 /* VerlinktTests */,
@@ -451,6 +454,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF026D0424CB2E5400ADBC70 /* .gitignore in Resources */,
 				AF6151F724A200EA00E158C7 /* LaunchScreen.storyboard in Resources */,
 				AF6151F424A200EA00E158C7 /* Preview Assets.xcassets in Resources */,
 				AF6151F124A200EA00E158C7 /* Assets.xcassets in Resources */,
