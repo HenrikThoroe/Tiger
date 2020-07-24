@@ -12,6 +12,8 @@ struct DateDisplay: View {
     
     let date: Date
     
+    var showTime: Bool = true
+    
     var day: String {
         let formatter = NumberFormatter()
         let day = Calendar.current.dateComponents([.day], from: date).day ?? -1
@@ -57,7 +59,7 @@ struct DateDisplay: View {
                 .frame(width: nil)
             HStack(spacing: 20) {
                 stack(top: weekday, bottom: month)
-                stack(top: time, bottom: year)
+                stack(top: showTime ? time : " ", bottom: year)
             }
         }
     }
@@ -77,6 +79,10 @@ struct DateDisplay: View {
 
 struct DateDisplay_Previews: PreviewProvider {
     static var previews: some View {
-        DateDisplay(date: Date())
+        VStack(spacing: 50) {
+            DateDisplay(date: Date())
+            
+            DateDisplay(date: Date(), showTime: false)
+        }
     }
 }

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		AF0CF21D24C4B02B0089FE87 /* NetworkObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */; };
 		AF0CF22324C772150089FE87 /* NameEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22224C772150089FE87 /* NameEditView.swift */; };
+		AF0CF22524C89DB00089FE87 /* FilterOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22424C89DB00089FE87 /* FilterOptions.swift */; };
+		AF0CF22724C89E950089FE87 /* FilterShortcut.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22624C89E950089FE87 /* FilterShortcut.swift */; };
+		AF0CF22924C8A3860089FE87 /* ListSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22824C8A3860089FE87 /* ListSettingsScreen.swift */; };
+		AF0CF22E24C8B2FA0089FE87 /* RoundedTextFieldBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22D24C8B2FA0089FE87 /* RoundedTextFieldBackground.swift */; };
+		AF0CF23024CA12280089FE87 /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF22F24CA12280089FE87 /* DatePickerView.swift */; };
+		AF0CF23224CAF4840089FE87 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0CF23124CAF4840089FE87 /* Date.swift */; };
 		AF15C7FC24A79FE1004E3E60 /* InfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FB24A79FE1004E3E60 /* InfoCard.swift */; };
 		AF15C7FE24A7A0F4004E3E60 /* LinkDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FD24A7A0F4004E3E60 /* LinkDetailScreen.swift */; };
 		AF15C80024A7A246004E3E60 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF15C7FF24A7A246004E3E60 /* CircleImage.swift */; };
@@ -76,6 +82,12 @@
 		AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkObserver.swift; sourceTree = "<group>"; };
 		AF0CF21E24C603B80089FE87 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AF0CF22224C772150089FE87 /* NameEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameEditView.swift; sourceTree = "<group>"; };
+		AF0CF22424C89DB00089FE87 /* FilterOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptions.swift; sourceTree = "<group>"; };
+		AF0CF22624C89E950089FE87 /* FilterShortcut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterShortcut.swift; sourceTree = "<group>"; };
+		AF0CF22824C8A3860089FE87 /* ListSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSettingsScreen.swift; sourceTree = "<group>"; };
+		AF0CF22D24C8B2FA0089FE87 /* RoundedTextFieldBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextFieldBackground.swift; sourceTree = "<group>"; };
+		AF0CF22F24CA12280089FE87 /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
+		AF0CF23124CAF4840089FE87 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		AF15C7FB24A79FE1004E3E60 /* InfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCard.swift; sourceTree = "<group>"; };
 		AF15C7FD24A7A0F4004E3E60 /* LinkDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkDetailScreen.swift; sourceTree = "<group>"; };
 		AF15C7FF24A7A246004E3E60 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -240,6 +252,7 @@
 				AF4050DF24AD0C4B006F2143 /* ImageProcessor.swift */,
 				AFD515AF24BA3E6C001A4EC5 /* ImageResultFilter.swift */,
 				AF0CF21C24C4B02B0089FE87 /* NetworkObserver.swift */,
+				AF0CF22424C89DB00089FE87 /* FilterOptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +266,7 @@
 				AF5FBC9B24A4E0A00009D7DF /* ScannerScreen.swift */,
 				AF5FBC9D24A4E1170009D7DF /* LibraryScreen.swift */,
 				AF29A26B24A895A000308D45 /* SaveScreen.swift */,
+				AF0CF22824C8A3860089FE87 /* ListSettingsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -284,6 +298,8 @@
 				AFBA6C4F24C21D4200E1E860 /* NoContent.swift */,
 				AF8896C624C30A1D000183FA /* CameraDenied.swift */,
 				AF0CF22224C772150089FE87 /* NameEditView.swift */,
+				AF0CF22624C89E950089FE87 /* FilterShortcut.swift */,
+				AF0CF22F24CA12280089FE87 /* DatePickerView.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -294,6 +310,7 @@
 				AF61522224A20CE900E158C7 /* MUIShadow.swift */,
 				AF61522924A2844500E158C7 /* Stretch.swift */,
 				AF15C7FF24A7A246004E3E60 /* CircleImage.swift */,
+				AF0CF22D24C8B2FA0089FE87 /* RoundedTextFieldBackground.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -307,6 +324,7 @@
 				AFD515B124BB4EC9001A4EC5 /* StringSimilarity.swift */,
 				AFD515B324BB5935001A4EC5 /* Average.swift */,
 				AFBA6C4D24C1E12000E1E860 /* URL.swift */,
+				AF0CF23124CAF4840089FE87 /* Date.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -461,6 +479,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF2F196624BDB84E00345A98 /* ScanningIndicator.swift in Sources */,
+				AF0CF22524C89DB00089FE87 /* FilterOptions.swift in Sources */,
+				AF0CF22E24C8B2FA0089FE87 /* RoundedTextFieldBackground.swift in Sources */,
 				AF15C7FE24A7A0F4004E3E60 /* LinkDetailScreen.swift in Sources */,
 				AF4050E024AD0C4B006F2143 /* ImageProcessor.swift in Sources */,
 				AF15C7FC24A79FE1004E3E60 /* InfoCard.swift in Sources */,
@@ -479,7 +499,9 @@
 				AF717A3124A67223007E641E /* ScannedLink.swift in Sources */,
 				AF717A3E24A799C2007E641E /* ScannerResultPreview.swift in Sources */,
 				AF8896C724C30A1D000183FA /* CameraDenied.swift in Sources */,
+				AF0CF23024CA12280089FE87 /* DatePickerView.swift in Sources */,
 				AF4050E224AD159C006F2143 /* RegEx.swift in Sources */,
+				AF0CF23224CAF4840089FE87 /* Date.swift in Sources */,
 				AFD515B424BB5935001A4EC5 /* Average.swift in Sources */,
 				AF5FBC9A24A3A2550009D7DF /* CameraView.swift in Sources */,
 				AFD515B224BB4EC9001A4EC5 /* StringSimilarity.swift in Sources */,
@@ -498,6 +520,8 @@
 				AF717A3A24A79073007E641E /* LinkPreview.swift in Sources */,
 				AF15C80024A7A246004E3E60 /* CircleImage.swift in Sources */,
 				AF61522324A20CE900E158C7 /* MUIShadow.swift in Sources */,
+				AF0CF22724C89E950089FE87 /* FilterShortcut.swift in Sources */,
+				AF0CF22924C8A3860089FE87 /* ListSettingsScreen.swift in Sources */,
 				AF5FBC9C24A4E0A00009D7DF /* ScannerScreen.swift in Sources */,
 				AF61522A24A2844500E158C7 /* Stretch.swift in Sources */,
 			);

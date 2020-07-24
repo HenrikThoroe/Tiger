@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct LibraryScreen: View {
     
@@ -19,6 +20,8 @@ struct LibraryScreen: View {
         ]
     ) var links: FetchedResults<ScannedLink>
     
+    @State private var filterOptions: FilterOptions = .none
+    
     @State private var filterText: String = ""
     
     @State private var sortCondition: SortCondition = .date
@@ -28,6 +31,8 @@ struct LibraryScreen: View {
     @State private var showDeleteWarning: Bool = false
     
     @State private var sharedUrl: URL? = nil
+    
+    @State private var showListSettings: Bool = false
     
     var body: some View {
         Group {
@@ -46,30 +51,24 @@ extension LibraryScreen {
     func main() -> some View {
         VStack {
             NavigationView {
-                VStack {
-                    SearchBar(text: $filterText)
-                        .padding([.top, .leading, .trailing])
-                    
-                    content()
-                }
-                .navigationBarTitle(Text("My Library"))
-                .navigationBarItems(trailing:
-                    HStack(spacing: 20) {
-                        Spacer()
-                        
-                        Picker(selection: $sortCondition, label: Text("Sort By: ")) {
-                            Text("Date").tag(SortCondition.date)
-                            Text("Name").tag(SortCondition.name)
-                        }.pickerStyle(SegmentedPickerStyle())
-                        Button(action: toggleSortDirection) {
-                            Image(systemName: sortAscending ? "arrow.up.circle" : "arrow.down.circle")
-                                    .resizable()
+                content()
+                    .navigationBarTitle(Text("My \(links.count) Links"), displayMode: .automatic)
+                    .navigationBarItems(leading:
+                        Button(action: { self.filterOptions = .none }) {
+                            Text("Reset Filters")
+                        },
+                                        
+                        trailing: Button(action: { self.showListSettings = true }) {
+                            Image(systemName: "gear")
+                                .resizable()
                         }.buttonStyle(IconButtonStyle())
+                    )
+                    .sheet(item: $sharedUrl) { url in
+                        ShareSheet(activityItems: [url as Any])
                     }
-                )
-                .sheet(item: $sharedUrl) { url in
-                    ShareSheet(activityItems: [url as Any])
-                }
+                    .sheet(isPresented: $showListSettings) {
+                        ListSettingsScreen(isPresented: self.$showListSettings, options: self.$filterOptions)
+                    }
             }
         }
     }
@@ -128,7 +127,23 @@ private extension LibraryScreen {
     }
     
     func filter(_ item: ScannedLink) -> Bool {
-        filterText.isEmpty || item.name.lowercased().contains(filterText.lowercased())
+        var matchesQuery = true
+        
+        if !filterOptions.hrefQuery.isEmpty {
+            matchesQuery = item.href.lowercased().contains(filterOptions.hrefQuery.lowercased())
+        } else if !filterOptions.domainQuery.isEmpty {
+            matchesQuery = item.name.lowercased().contains(filterOptions.domainQuery.lowercased())
+        }
+        
+        if case let .exact(date) = filterOptions.created {
+            matchesQuery = item.scanned.isSameDay(as: date)
+        }
+        
+        if case let .span(start, end) = filterOptions.created {
+            matchesQuery = item.scanned.isBetween(start, end)
+        }
+        
+        return matchesQuery
     }
     
 }
@@ -143,6 +158,6 @@ extension LibraryScreen {
 
 struct LibraryScreen_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryScreen()
+        LibraryScreen().environment(\.managedObjectContext, NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType))
     }
 }
