@@ -4,3 +4,4 @@
 ./Tiger/*
 ./TigerTests/*
 ./TigerUITests/*
+.DS_Store
